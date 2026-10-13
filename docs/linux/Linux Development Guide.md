@@ -1,4 +1,4 @@
-# Linux Command Cheat Sheet
+# Linux Development Guide
 
 > **Project:** FPGA Implementation of Optimized FIR Filter for Signal Processing  
 > **Operating System:** Ubuntu 24.04 LTS  
@@ -9,20 +9,22 @@
 
 # About This Handbook
 
-This handbook is a personal reference for Linux commands used during FPGA development.
+This handbook serves as a personal Linux reference prepared for the development of the FIR Filter FPGA project.
 
-It includes:
+It documents the Linux tools, commands, and workflows that will be used throughout the project and will be updated as new knowledge and development practices are learned.
+
+The handbook currently includes and will continue to expand with topics such as:
 
 - Linux terminal commands
-- File management
-- Git and GitHub
+- File and directory management
+- Git and GitHub workflows
 - Conda environment management
 - Python development
-- Verilog simulation
-- GTKWave
-- VS Code
-- Daily workflow
-- Troubleshooting
+- Verilog simulation using Icarus Verilog
+- GTKWave waveform analysis
+- Visual Studio Code
+- Daily development workflow
+- Troubleshooting and best practices
 
 Instead of only listing commands, each section explains:
 
