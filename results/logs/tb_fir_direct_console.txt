@@ -1,0 +1,13 @@
+VCD info: dumpfile results/simulation/fir_direct.vcd opened for output.
+PASS: Tap 0 output = 18677190
+PASS: Tap 1 output = 65730602
+PASS: Tap 2 output = 178416315
+PASS: Tap 3 output = 274030421
+PASS: Tap 4 output = 274030421
+PASS: Tap 5 output = 178416315
+PASS: Tap 6 output = 65730602
+PASS: Tap 7 output = 18677190
+PASS: Reset cleared output.
+PASS: Reset cleared the delay line.
+PASS: All Direct Form tests passed.
+testbench/tb_fir_direct.v:122: $finish called at 126000 (1ps)

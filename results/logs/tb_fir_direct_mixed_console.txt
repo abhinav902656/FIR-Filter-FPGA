@@ -1,0 +1,3 @@
+VCD info: dumpfile results/simulation/fir_direct_mixed.vcd opened for output.
+Mixed-frequency simulation completed: 2000 samples.
+testbench/tb_fir_direct_mixed.v:88: $finish called at 20020000 (1ps)

@@ -1,0 +1,6 @@
+PASS: Input 32767, output 18677190
+PASS: Input -32768, output 47052842
+PASS: Input 0, output 112683707
+PASS: Input 1, output 95609231
+PASS: All full-range tests passed.
+testbench/tb_fir_direct_range.v:73: $finish called at 60000 (1ps)

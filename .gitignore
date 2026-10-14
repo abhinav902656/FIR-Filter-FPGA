@@ -1,0 +1,23 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Icarus Verilog compiled executables
+results/fir_direct_compile
+results/simulation/tb_fir_direct
+results/simulation/tb_fir_direct_range
+results/simulation/tb_fir_direct_mixed
+
+# Vivado generated work directories and reports
+vivado_project/
+*.jou
+*.log
+*.str
+*.dcp
+*.bit
+*.bin
+
+# Temporary editor files
+*~
+*.swp
+*.swo

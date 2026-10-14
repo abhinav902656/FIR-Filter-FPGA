@@ -26,6 +26,8 @@ module tb_fir_direct_range;
     end
 
     initial begin
+        $dumpfile("results/simulation/fir_direct_range.vcd");
+        $dumpvars(0, tb_fir_direct_range);
         test_values[0] = 16'sd32767;
         test_values[1] = -16'sd32768;
         test_values[2] = 16'sd0;
@@ -42,7 +44,6 @@ module tb_fir_direct_range;
 
         repeat (2) @(negedge clk);
         rst = 1'b0;
-
         for (i = 0; i < 4; i = i + 1) begin
             sample_in = test_values[i];
 

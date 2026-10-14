@@ -1,0 +1,8 @@
+Input samples: 2000
+Verilog output samples: 2000
+Q15 coefficients: 8
+Input range: -31836 to 31836
+Max absolute error: 0
+Mismatches: 0
+Comparison plot saved: results/plots/fir_direct_python_vs_verilog.png
+PASS: All Verilog outputs match the Python reference.

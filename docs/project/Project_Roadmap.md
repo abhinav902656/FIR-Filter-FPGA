@@ -30,7 +30,7 @@
 - [ ] Resource utilization
 
 ## Phase 6 – Hardware
-- [ ] Spartan-6 programming
+- [ ] Hardware demonstration on the Xilinx FPGA Development Board (College Provided)
 - [ ] Output verification
 
 ## Phase 7 – Documentation
