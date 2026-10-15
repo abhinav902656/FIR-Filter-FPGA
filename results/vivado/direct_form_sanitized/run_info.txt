@@ -1,0 +1,14 @@
+Project title: FPGA Implementation of Optimized FIR Filter for Signal Processing
+Architecture: Direct Form (src/fir_direct.v)
+Run date/time: 2026-10-14 21:23:26 +05:30
+Windows commit: af429f980dabad8e6b0ab60160c998785ee5c78f
+Git tag: direct-form-linux-verified
+Vivado version: 2023.2
+Target part: xc7a35tcpg236-1
+Top module: fir_direct
+Clock period: 10.000 ns
+Input delay: 0.000 ns
+Output delay: 0.000 ns
+Run type: Batch Tcl
+Bitstream generated: No
+Power estimate: Vectorless

@@ -30,3 +30,9 @@ vivado/fir_direct_vivado/
 
 # Generated Vivado clock information
 clockInfo.txt
+
+# Local-only original Vivado evidence archive
+/results/vivado/direct_form_raw/
+/results/vivado/direct_form/vivado_run_journal.txt
+/results/vivado/direct_form/*
+!/results/vivado/direct_form/EVIDENCE_INDEX.md

@@ -1,0 +1,2 @@
+architecture,target_period_ns,WNS_ns,TNS_ns,estimated_Fmax_MHz,LUT,FF,DSP48E1,BRAM,IOB,BUFGCTRL,dynamic_power_W,static_power_W,total_power_W,notes
+Direct Form,10.000,-0.232,-0.996,97.7,204,32,8,0,50,1,0.046,0.070,0.116,"Timing not met at the 10 ns target (WNS -0.232 ns); Vivado estimate, vectorless, low confidence"

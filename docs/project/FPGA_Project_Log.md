@@ -134,3 +134,18 @@ Not yet completed:
 - Comparison against the other three architectures
 
 The Direct Form architecture has passed the current Linux simulation tests. FPGA synthesis and hardware implementation remain separate verification steps.
+
+## Vivado Direct Form Evidence — 2026-10-14
+
+The Direct Form design was synthesized and implemented with Vivado 2023.2 for `xc7a35tcpg236-1` using a 10.000 ns clock target.
+
+- Timing not met at the 10 ns target (WNS -0.232 ns).
+- Routed timing summary: TNS -0.996 ns; 8 setup endpoints fail out of 283.
+- Resource use: 204 LUTs, 32 registers, and 8 DSP48E1 blocks.
+- Estimated power: 0.116 W total, including 0.046 W dynamic and 0.070 W static; vectorless, low confidence.
+- The console also records an estimated timing summary of WNS -0.268 ns and TNS -1.350 ns. Its relationship to the routed GUI timing summary remains unresolved; values are not averaged.
+- The XDC path is recorded in the console as `constraints/vivado/top.xdc`, with a 10 ns clock and zero input/output delays.
+- No bitstream was generated. No physical-board testing was performed.
+- The RTL and XDC were not changed during this evidence collection.
+
+See `Direct_Form_Vivado_Results.md`, `Direct_Form_Timing_Diagnosis.md`, and `results/vivado/direct_form/EVIDENCE_INDEX.md`.

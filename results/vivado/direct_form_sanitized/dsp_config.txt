@@ -1,0 +1,8 @@
+sample_out1 AREG=1 BREG=0 MREG=0 PREG=0
+sample_out2 AREG=1 BREG=0 MREG=0 PREG=0
+sample_out3 AREG=1 BREG=0 MREG=0 PREG=0
+sample_out4 AREG=1 BREG=0 MREG=0 PREG=0
+sample_out5 AREG=2 BREG=0 MREG=0 PREG=0
+sample_out6 AREG=2 BREG=0 MREG=0 PREG=0
+sample_out7 AREG=1 BREG=0 MREG=0 PREG=0
+sample_out7__0 AREG=0 BREG=0 MREG=0 PREG=0

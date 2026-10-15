@@ -1,0 +1,11 @@
+Sanitization note
+=================
+Purpose: remove local host and path information from publication copies.
+Hostname replacement: BUILD-HOST
+Path replacement: PROJECT-ROOT
+Publication set: 14 reports, one sanitized Vivado console log, dsp_config.txt, run_info.txt, and this note.
+Original reports, logs, and checkpoints remain in the local source folder.
+Raw copies are preserved in the ignored direct_form_raw folder.
+Journal and checkpoint files are local-only and are not included in the publication set.
+The original files were archived separately. Verify original hashes against ORIGINAL_HASHES.txt before publication.
+The known hostname and project-path scan passed for the sanitized publication files.
