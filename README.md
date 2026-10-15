@@ -71,7 +71,7 @@ We use Vivado 2023.2 for FPGA synthesis and implementation.
 | FPGA family | Artix-7 |
 | Device | XC7A35T-1CPG236C |
 | Clock constraint | 100 MHz |
-| Timing status | Pending synthesis and implementation reports |
+| Timing status | Timing not met at the 10 ns target (WNS -0.232 ns) |
 
 The clock constraint is a target for evaluation. It does not mean that timing closure has been achieved.
 
@@ -217,3 +217,127 @@ The comparison passed. All Verilog output samples match the Python reference.
 *The plot compares the Python reference output with the Verilog simulation output.*
 
 See the [comparison console log](results/logs/compare_direct_console.txt) for the recorded results.
+
+---
+
+## 6. Vivado implementation results
+
+### 6.1 Implementation status
+
+The Direct Form FIR design has completed a Vivado 2023.2 tool-based
+synthesis and implementation flow for the project's Artix-7 target.
+
+The results below describe the recorded implementation evidence. They
+do not establish physical-board operation or successful bitstream
+generation.
+
+### 6.2 Resource utilization
+
+| Metric | Recorded result |
+|---|---:|
+| DSP48E1 | 8 |
+| LUTs | 204 |
+| Flip-flops | 32 |
+| Block RAM | 0 |
+| I/O blocks | 50 |
+| BUFGCTRL | 1 |
+
+![Direct Form Vivado utilization report](results/plots/vivado/vivado_direct_03_utilization.png)
+
+### 6.3 Timing analysis
+
+**Timing not met at the 10 ns target (WNS -0.232 ns).**
+
+| Metric | Recorded result |
+|---|---:|
+| Target clock period | 10 ns |
+| GUI timing-summary WNS | -0.232 ns |
+| GUI timing-summary TNS | -0.996 ns |
+| Setup failing endpoints | 8 of 283 |
+| Worst hold slack | +0.080 ns |
+| Hold failures | 0 |
+| Pulse-width slack | +4.500 ns |
+| Critical-path delay | 10.250 ns |
+| Critical-path logic delay | 6.920 ns |
+| Critical-path routing delay | 3.330 ns |
+| Estimated Fmax from GUI WNS | Approximately 97.7 MHz |
+
+The estimated Fmax is calculated from the GUI timing-summary WNS and
+the 10 ns target period. It is an estimate, not a separate measured
+clock-frequency result.
+
+The batch-console timing summary reports different values
+(WNS -0.268 ns and TNS -1.350 ns). This discrepancy remains unresolved.
+The GUI and console values are kept separate; they are not averaged.
+
+![Direct Form Vivado timing summary](results/plots/vivado/vivado_direct_04_timing_summary.png)
+
+![Direct Form critical path](results/plots/vivado/vivado_direct_05_worst_path.png)
+
+### 6.4 Estimated power
+
+| Metric | Vivado estimate |
+|---|---:|
+| Total on-chip power | 0.116 W |
+| Dynamic power | 0.046 W |
+| Static power | 0.070 W |
+| Estimated junction temperature | 25.6 °C |
+
+![Direct Form Vivado power report](results/plots/vivado/vivado_direct_06_power.png)
+
+These values come from a vectorless Vivado power estimate and have low
+confidence. They are not physical power measurements.
+
+### 6.5 Additional implementation evidence
+
+The following screenshots are committed to the repository. Select a
+link to open the corresponding image.
+
+| Evidence | Screenshot |
+|---|---|
+| Vivado version and commit | [Open image](results/plots/vivado/vivado_direct_01_version_commit.png) |
+| Commit evidence | [Open image](results/plots/vivado/vivado_direct_01_commit.png) |
+| Project summary | [Open image](results/plots/vivado/vivado_direct_02_project_summary.png) |
+| Implemented utilization | [Open image](results/plots/vivado/vivado_direct_03_utilization.png) |
+| Timing summary | [Open image](results/plots/vivado/vivado_direct_04_timing_summary.png) |
+| Worst timing path | [Open image](results/plots/vivado/vivado_direct_05_worst_path.png) |
+| Power estimate | [Open image](results/plots/vivado/vivado_direct_06_power.png) |
+| Implemented netlist schematic | [Open image](results/plots/vivado/vivado_direct_07_implemented_schematic.png) |
+| Device view | [Open image](results/plots/vivado/vivado_direct_08_device_view.png) |
+| Implementation messages | [Open image](results/plots/vivado/vivado_direct_09_messages.png) |
+| DSP configuration | [Open image](results/plots/vivado/vivado_direct_10_dsp_config.png) |
+
+Detailed documents:
+
+- [Direct Form Vivado results](docs/project/Direct_Form_Vivado_Results.md)
+- [Direct Form timing diagnosis](docs/project/Direct_Form_Timing_Diagnosis.md)
+- [Direct Form verification report](docs/project/Direct_Form_Verification_Report.md)
+- [Vivado evidence index](results/vivado/direct_form/EVIDENCE_INDEX.md)
+- [Direct Form results CSV](results/summary/direct_form_results.csv)
+- [Project log](docs/project/FPGA_Project_Log.md)
+
+### 6.6 Known limitations
+
+- Timing is not met at the 10 ns target.
+- The batch-console and GUI timing summaries disagree; the discrepancy remains unresolved.
+- Input and output delays were set to zero, so external interface timing is not fully characterized.
+- Power is a vectorless, low-confidence estimate.
+- No bitstream was generated in this implementation flow.
+- No physical-board test or hardware measurement has been completed.
+- The 10 kHz component is attenuated, not completely removed.
+
+### 6.7 Overall project status
+
+| Work item | Status |
+|---|---|
+| Direct Form simulation and Python comparison | Verified |
+| Direct Form Vivado implementation evidence | Recorded |
+| Direct Form timing target | Not met |
+| Pipelined architecture | Not started |
+| Symmetric architecture | Not started |
+| Combined architecture | Not started |
+| Physical FPGA demonstration | Pending |
+
+The next development step is to prepare and verify the Pipelined FIR
+architecture in separate files. The four architectures will be
+evaluated individually before physical-board demonstration.
