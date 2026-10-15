@@ -21,3 +21,12 @@ vivado_project/
 *~
 *.swp
 *.swo
+
+# Additional Vivado generated work directories
+.Xil/
+vivado_work/
+
+vivado/fir_direct_vivado/
+
+# Generated Vivado clock information
+clockInfo.txt
